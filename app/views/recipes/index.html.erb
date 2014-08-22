@@ -7,6 +7,15 @@
   <% end %>
 <% end %>
 <hr>
+<% if @recipe.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @recipe.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+  <br />
+<% end %>
 <form action="/recipes" method="post">
   <label for="name">Name:</label>
   <input id="name" name="recipes[name]" type="text" value="<%= @recipe.name %>"><br>
