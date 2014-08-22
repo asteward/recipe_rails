@@ -7,3 +7,5 @@
   <textarea id="content" name="recipes[content]" rows="10" cols="50"><%= @recipe.content %></textarea><br>
   <button class="btn btn-success">Update Recipe</button>
 </form>
+<br>
+<a href="/recipes/<%= @recipe.id %>"><button class="btn btn-warning">Cancel</button></a>
