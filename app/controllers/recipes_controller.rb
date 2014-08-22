@@ -7,6 +7,10 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new(params[:recipes])
-    render('/recipes/index.html.erb')
+    if @recipe.save
+      redirect_to("/recipes")
+    else
+      render('/recipes/index.html.erb')
+    end
   end
 end
