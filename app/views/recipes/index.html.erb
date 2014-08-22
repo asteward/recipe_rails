@@ -6,11 +6,11 @@
     <li><a href="/recipes/<%= recipe.id %>"><%= recipe.name %></a></li>
   <% end %>
 <% end %>
-
+<hr>
 <form action="/recipes" method="post">
   <label for="name">Name:</label>
   <input id="name" name="recipes[name]" type="text" value="<%= @recipe.name %>"><br>
   <label for="content">Instructions:</label><br>
   <textarea id="content" name="recipes[content]" rows="10" cols="50" placeholder="Recipe Instructions..." value="<%= @recipe.content %>"></textarea><br>
-  <button type="submit">Add Recipe</button>
+  <button class="btn btn-success">Add Recipe</button>
 </form>
