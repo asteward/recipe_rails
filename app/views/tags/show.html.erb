@@ -1,0 +1,8 @@
+<h1><%= @tag.name %></h1>
+
+<p><a href="/recipes/<%= @tag.id %>/edit"><button class="btn btn-warning">Edit Tag</button></a></p>
+<p><a href="/recipes/<%= @tag.id %>"
+      data-confirm="Are you sure you wish to delete the <%= @tag.name %> tag?"
+      data-method="delete"
+      rel="nofollow"><button class="btn btn-danger">Delete</button></a></p>
+<p><a href="/recipes"><button class="btn btn-info">Tags List</button></a></p>
