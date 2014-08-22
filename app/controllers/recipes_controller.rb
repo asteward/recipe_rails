@@ -16,5 +16,6 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    redirect_to("/recipes/#{@recipe.id}")
+    render('/recipes/show.html.erb')
+  end
 end
