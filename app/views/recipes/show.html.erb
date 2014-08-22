@@ -5,7 +5,7 @@
 
 <p><a href="/recipes/<%= @recipe.id %>/edit"><button class="btn btn-warning">Edit Recipe</button></a></p>
 <p><a href="/recipes/<%= @recipe.id %>"
-      data-confirm="Are you sure?"
+      data-confirm="Are you sure you wish to delete the <%= @recipe.name %> recipe?"
       data-method="delete"
       rel="nofollow"><button class="btn btn-danger">Delete</button></a></p>
 <p><a href="/recipes"><button class="btn btn-info">Recipes List</button></a></p>
