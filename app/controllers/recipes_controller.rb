@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
 
   def index
+    @recipe = Recipe.new(params[:recipes])
     @recipes = Recipe.all
     render('/recipes/index.html.erb')
   end
