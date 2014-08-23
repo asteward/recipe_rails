@@ -13,4 +13,15 @@ class TagsController < ApplicationController
       render('/tags/index.html.erb')
     end
   end
+
+  def show
+    @tag = Tag.find(params[:id])
+    render('/tags/show.html.erb')
+  end
+
+  def delete
+    @tag = Tag.find(params[:id])
+    @tag.delete
+    redirect_to("/tags")
+  end
 end
