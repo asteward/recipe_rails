@@ -29,17 +29,16 @@
 
 <hr>
 
-<h3>Tagged Recipes</h3>
-<% if @recipes.tagged() %>
-  <h3>All Recipes</h3>
-  <% @recipes.each do |recipe| %>
+<% if @tag %>
+  <h3><%= @tag.name %> Recipes</h3>
+  <% @tag.recipes.each do |recipe| %>
     <li><a href="/recipes/<%= recipe.id %>"><%= recipe.name %></a></li>
   <% end %>
 <% end %>
 
-<form action="/recipes" method="post">
+<form action="/recipes" method="get">
   <label for="tag">Search by Tag:</label>
-  <select id="tag" name="recipes[tag]">
+  <select id="tag" name="tags[tag_id]">
     <% @tags.each do |tag| %>
       <option value="<%= tag.id %>"><%= tag.name %></option>
     <% end %>

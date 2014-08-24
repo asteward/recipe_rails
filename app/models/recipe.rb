@@ -3,6 +3,4 @@ class Recipe < ActiveRecord::Base
 
   validates :name, presence: true
   validates :content, presence: true
-
-  scope :tagged(tag), -> { where(tag.recipes)}
 end

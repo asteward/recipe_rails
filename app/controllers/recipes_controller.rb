@@ -4,7 +4,10 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(params[:recipes])
     @recipes = Recipe.order(:name)
     @tags = Tag.order(:name)
-    @tagged = Recipe.tagged(params[:recipes][:tag])
+    if params[:tags]
+      @tag = Tag.find(params[:tags][:tag_id])
+      @tagged = @tag.recipes
+    end
     render('/recipes/index.html.erb')
   end
 
