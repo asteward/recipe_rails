@@ -28,3 +28,17 @@ button.blockbutton {
     width: 200px;
     font-size: 40px;
 }
+
+.panel {
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+}
+
+.panel-default > .panel-heading {
+  background-color: #5CC75C;
+}
+
+.panel-title {
+  color: white;
+}
