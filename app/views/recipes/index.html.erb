@@ -6,7 +6,9 @@
     <li><a href="/recipes/<%= recipe.id %>"><%= recipe.name %></a></li>
   <% end %>
 <% end %>
+
 <hr>
+
 <% if @recipe.errors.any? %>
   <h3>Please fix these errors:</h3>
   <ul>
@@ -16,10 +18,31 @@
   </ul>
   <br />
 <% end %>
+
 <form action="/recipes" method="post">
   <label for="name">Name:</label>
   <input id="name" name="recipes[name]" type="text" value="<%= @recipe.name %>"><br>
   <label for="content">Instructions:</label><br>
   <textarea id="content" name="recipes[content]" rows="10" cols="50" placeholder="Recipe Instructions..." value="<%= @recipe.content %>"></textarea><br>
   <button class="btn btn-success">Add Recipe</button>
+</form>
+
+<hr>
+
+<h3>Tagged Recipes</h3>
+<% if @recipes.tagged() %>
+  <h3>All Recipes</h3>
+  <% @recipes.each do |recipe| %>
+    <li><a href="/recipes/<%= recipe.id %>"><%= recipe.name %></a></li>
+  <% end %>
+<% end %>
+
+<form action="/recipes" method="post">
+  <label for="tag">Search by Tag:</label>
+  <select id="tag" name="recipes[tag]">
+    <% @tags.each do |tag| %>
+      <option value="<%= tag.id %>"><%= tag.name %></option>
+    <% end %>
+  </select>
+  <p><button class="btn btn-success">Search Recipes</button></p>
 </form>

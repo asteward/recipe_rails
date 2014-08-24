@@ -2,7 +2,9 @@ class RecipesController < ApplicationController
 
   def index
     @recipe = Recipe.new(params[:recipes])
-    @recipes = Recipe.all
+    @recipes = Recipe.order(:name)
+    @tags = Tag.order(:name)
+    @tagged = Recipe.tagged(params[:recipes][:tag])
     render('/recipes/index.html.erb')
   end
 
