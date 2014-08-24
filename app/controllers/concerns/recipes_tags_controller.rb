@@ -6,11 +6,9 @@ class RecipesTagsController < ApplicationController
   end
 
   def create
-    @recipe_tag = Recipe_Tag.new(params[:recipes_tags])
-    if @recipe_Tag.save
-      redirect_to("/recipes")
-    else
-      render('/recipes_tags/index.html.erb')
-    end
+    @recipe = Recipe.find(params[:recipes_tags][:recipe_id])
+    @tag = Tag.find(params[:recipes_tags][:tag_id])
+    @recipe.tags << @tag
+    redirect_to("/recipes_tags")
   end
 end
