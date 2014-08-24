@@ -26,10 +26,28 @@
   <br />
 <% end %>
 
-<form action="/recipes" method="post">
-  <%= render('form') %>
-  <button class="btn btn-success">Add Recipe</button>
-</form>
+<div class="panel-group" id="accordion">
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          Add Recipe
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse">
+      <div class="panel-body">
+        <form action="/recipes" method="post">
+          <%= render('form') %>
+          <button class="btn btn-success">Add Recipe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 <hr>
 
