@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   match('/tags/:id', {via: :get, to: 'tags#show'})
   match('/tags/:id', {via: :delete, to: 'tags#destroy'})
   match('/recipes_tags', {via: :get, to: 'recipes_tags#index'})
+  match('/recipes_tags', {via: :post, to: 'recipes_tags#create'})
 end
