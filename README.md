@@ -9,6 +9,7 @@ This rails web app uses two models (`Recipe` & `Tag`) that are related through a
 - [Bootstrap.min.js](http://getbootstrap.com/javascript/)
 - [jQuery](http://jquery.com/)
 - [Sass](http://sass-lang.com/)
+
 ***
 ##Licensing
 - [MIT](http://opensource.org/licenses/MIT)
