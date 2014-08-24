@@ -5,7 +5,8 @@
 <h3>Tags:</h3>
 <% @recipe.tags.each do |tag| %>
   <%= tag.name %>
-<& end %>
+<% end %>
+<p><a href="/recipes_tags/"><button class="btn btn-success">Add Tag</button></a></p>
 <p><a href="/recipes/<%= @recipe.id %>/edit"><button class="btn btn-warning">Edit Recipe</button></a></p>
 <p><a href="/recipes/<%= @recipe.id %>"
       data-confirm="Are you sure you wish to delete the <%= @recipe.name %> recipe?"
