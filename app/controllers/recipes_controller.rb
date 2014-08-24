@@ -13,6 +13,11 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(params[:recipes])
+    @tags = Tag.order(:name)
+    if params[:tags]
+      @tag = Tag.find(params[:tags][:tag_id])
+      @tagged = @tag.recipes
+    end
     if @recipe.save
       redirect_to("/recipes")
     else
