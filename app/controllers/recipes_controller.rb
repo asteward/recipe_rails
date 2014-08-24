@@ -22,6 +22,7 @@ class RecipesController < ApplicationController
       flash[:notice] = "#{@recipe.name} has been added!"
       redirect_to("/recipes")
     else
+      flash[:alert] = "Be sure to complete all fields before submitting!"
       render('/recipes/index.html.erb')
     end
   end
