@@ -40,6 +40,7 @@ class RecipesController < ApplicationController
   def update
     @recipe = Recipe.find(params[:id])
     if @recipe.update(params[:recipes])
+      flash[:notice] = "#{@recipe.name} has been updated!"
       redirect_to("/recipes/#{@recipe.id}")
     else
       render('/recipes/edit.html.erb')
