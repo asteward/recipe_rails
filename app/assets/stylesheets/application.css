@@ -1,15 +1,27 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+  text-align: center;
+}
+.jumbotron {
+  background-color: #FF983D;
+  color: white;
+}
+
+.jumbotron h1 {
+  text-transform: none;
+  font-size: 600%;
+}
+
+h1 {
+  font-size: 400%;
+  text-transform: uppercase;
+  background-color: #FF983D;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+button.blockbutton {
+    height: 100px;
+    width: 200px;
+    font-size: 40px;
+}

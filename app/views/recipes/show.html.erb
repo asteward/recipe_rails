@@ -2,14 +2,25 @@
 
 <h3>Recipe Instructions</h3>
 <%= @recipe.content %>
-<h3>Tags:</h3>
-<% @recipe.tags.each do |tag| %>
-  <%= tag.name %>
-<% end %>
-<p><a href="/recipes_tags"><button class="btn btn-success">Add Tag</button></a></p>
-<p><a href="/recipes/<%= @recipe.id %>/edit"><button class="btn btn-warning">Edit Recipe</button></a></p>
-<p><a href="/recipes/<%= @recipe.id %>"
+
+<h4>Tags:</h4>
+<h5>
+  <% @recipe.tags.each do |tag| %>
+    <a href="/tags/<%= tag.id %>"><%= tag.name %></a> -
+  <% end %>
+</h5>
+
+
+<hr>
+
+<p>
+  <a href="/recipes_tags"><button class="btn btn-success blockbutton">Add Tag</button></a>
+  <a href="/recipes/<%= @recipe.id %>/edit"><button class="btn btn-warning blockbutton">Edit</button></a>
+</p>
+<p>
+  <a href="/recipes/<%= @recipe.id %>"
       data-confirm="Are you sure you wish to delete the <%= @recipe.name %> recipe?"
       data-method="delete"
-      rel="nofollow"><button class="btn btn-danger">Delete</button></a></p>
-<p><a href="/recipes"><button class="btn btn-info">Recipes List</button></a></p>
+      rel="nofollow"><button class="btn btn-danger blockbutton">Delete</button></a>
+  <a href="/recipes"><button class="btn btn-info blockbutton">Back</button></a>
+</p>
