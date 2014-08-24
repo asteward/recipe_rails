@@ -11,7 +11,7 @@ class TagsController < ApplicationController
       flash[:notice] = "#{@tag.name} has been added!"
       redirect_to("/tags")
     else
-      flash[:alert] = "Be sure to complete all fields before submitting!"
+      flash[:alert] = "Looks like an error occurred! Let's try again, shall we?"
       render('/tags/index.html.erb')
     end
   end
