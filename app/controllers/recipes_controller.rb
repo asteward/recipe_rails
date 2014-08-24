@@ -19,6 +19,7 @@ class RecipesController < ApplicationController
       @tagged = @tag.recipes
     end
     if @recipe.save
+      flash[:notice] = "#{@recipe.name} has been added!"
       redirect_to("/recipes")
     else
       render('/recipes/index.html.erb')
