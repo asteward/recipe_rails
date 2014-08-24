@@ -1,1 +1,17 @@
 <h1>Tag Recipes</h1>
+
+<form action="/recipes_tags" method="post">
+  <label for="recipe">Select Recipe:</label>
+  <select id="recipe" name="recipes_tags[:recipe_id]">
+    <% @recipes.each do |recipe| %>
+      <option value="<%= recipe.id %>"><%= recipe.name %></option>
+    <% end %>
+  </select>
+  <label for="tag">Select Tag:</label>
+  <select id="tag" name="recipes_tags[:tag_id]">
+    <% @tags.each do |tag| %>
+      <option value="<%= tag.id %>"><%= tag.name %></option>
+    <% end %>
+  </select>
+  <p><a href="/recipes_tags"><button class="btn btn-success">Add Tag</button></a></p>
+</form>
