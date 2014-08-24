@@ -7,8 +7,7 @@ class RecipesTagsController < ApplicationController
 
   def create
     @recipe = Recipe.find(params[:recipes_tags][:recipe_id])
-    @tag = Tag.find(params[:recipes_tags][:tag_id])
-    @recipe.tags << @tag
+    @recipe.tags << Tag.find(params[:recipes_tags][:tag_id])
     redirect_to("/recipes_tags")
   end
 end
