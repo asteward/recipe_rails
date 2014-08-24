@@ -7,8 +7,9 @@
   <% @tags.each do |tag| %>
     <li><a href="/tags/<%= tag.id %>"><%= tag.name %></a></li>
   <% end %>
+  <hr>
 <% end %>
-<hr>
+
 <% if @tag.errors.any? %>
   <h3>Please fix these errors:</h3>
   <ul>
@@ -18,10 +19,13 @@
   </ul>
   <br />
 <% end %>
+
 <form action="/tags" method="post">
   <label for="name">Name:</label>
   <input id="name" name="tags[name]" type="text" value="<%= @tag.name %>">
   <button class="btn btn-success">Add Tag</button>
 </form>
+
 <hr>
+
 <a href="/"><button class="btn btn-info">The CookBook</button></a>

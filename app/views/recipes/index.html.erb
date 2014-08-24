@@ -2,7 +2,6 @@
 
 <h1>Recipes</h1>
 
-
 <% if @tag %>
   <h3><%= @tag.name %> Recipes</h3>
   <% @tag.recipes.each do |recipe| %>
@@ -41,7 +40,9 @@
       <option value="<%= tag.id %>"><%= tag.name %></option>
     <% end %>
   </select>
-<button class="btn btn-warning">Search Recipes</button>
+  <button class="btn btn-warning">Search Recipes</button>
 </form>
+
 <hr>
+
 <a href="/"><button class="btn btn-info">The CookBook</button></a>
